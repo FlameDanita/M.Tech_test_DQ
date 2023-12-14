@@ -76,7 +76,7 @@ class compress_pyramid_task():
 
     def compress_process(self):
         while self.check_string(self.string) and len(self.string) > 4:
-            self.print_pyramid(self.string)
+            # self.print_pyramid(self.string)
             self.new_string = self.compress_pyramid(self.string)
             
             if len(self.string) == len(self.new_string):
@@ -84,11 +84,8 @@ class compress_pyramid_task():
             else:
                 self.string = self.new_string
 
-        if self.check_string(self.string):
-            self.print_pyramid(self.string)
-        
-    def print_separate_pyramid(self):
-        pass
+        # if self.check_string(self.string):
+        #     self.print_pyramid(self.string)
 
     def print_pyramid(self, string):
         len_current_row = 1
@@ -131,7 +128,5 @@ if __name__ == "__main__":
     task.get_examples()
 
     task.read_string('input.txt')
-
     task.compress_process()
-
     task.write_string('output.txt')
